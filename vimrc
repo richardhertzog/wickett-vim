@@ -96,8 +96,7 @@ Plug 'mattn/emmet-vim'
 
 " javascript
 "" Javascript Bundle
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'sheerun/vim-polyglot'
 
 " python
 "" Python Bundle
@@ -402,15 +401,12 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-
+"linting
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1

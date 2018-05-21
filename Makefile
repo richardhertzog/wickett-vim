@@ -10,11 +10,7 @@ config:
 install: clean config
 	vim +PlugInstall +qall
 
-update:
-	@echo "Downloading new vimrc..."
-	curl 'http://vim-bootstrap.com/generate.vim' --data 'langs=go&langs=javascript&langs=html&langs=python&editor=vim' > ~/.vim/vimrc
-	@echo "Check in changes to gh"
-	@echo "Run make install to get a clean build"
+update: clean install
 
 clean-all: clean
 	rm -rf ~/.vim/autoload
