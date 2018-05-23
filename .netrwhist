@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/tracer/dev/iris/packages/iris-app-retail-travel'
 let g:netrw_dirhist_2='/Users/tracer/dev/iris/packages/iris-app-retail-travel/src'
 let g:netrw_dirhist_3='/Users/tracer/dev/iris/packages/iris-app-retail-travel/src/common'
 let g:netrw_dirhist_4='/Users/tracer/dev/iris/packages/iris-app-retail-travel/src/common/forms'
 let g:netrw_dirhist_5='/Users/tracer'
 let g:netrw_dirhist_6='/Users/tracer/.vim'
+let g:netrw_dirhist_7='/Users/tracer/go/src/github.com/SteveCastle/gophercises/cyoa'
+let g:netrw_dirhist_8='/Users/tracer/go/src/github.com/SteveCastle/gophercises/cyoa/cmd'

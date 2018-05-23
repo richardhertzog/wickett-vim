@@ -131,7 +131,7 @@ set fileencodings=utf-8
 set bomb
 set binary
 set ttyfast
-
+set autochdir
 "" Fix backspace indent
 set backspace=indent,eol,start
 
@@ -186,11 +186,11 @@ endif
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
-set gfn=Monospace\ 10
+set gfn=Fira\ Code\ Retina\ 17
 
 if has("gui_running")
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
+    set guifont=Fira \Code\ Retina:h16
     set transparency=7
   endif
 else
@@ -201,7 +201,6 @@ else
   let g:indentLine_concealcursor = 0
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
-
   
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
