@@ -50,6 +50,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'SirVer/ultisnips'
+Plug 'junegunn/limelight.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -125,13 +129,13 @@ filetype plugin indent on
 "" Basic Setup
 "*****************************************************************************"
 "" Encoding
+set scrolloff=30
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
 set binary
 set ttyfast
-set autochdir
 "" Fix backspace indent
 set backspace=indent,eol,start
 
@@ -220,7 +224,6 @@ endif
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
-set scrolloff=3
 
 "" Status bar
 set laststatus=2
@@ -252,6 +255,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
+" goyo
+let g:goyo_linenr=1
+let g:goyo_width=100
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
@@ -353,7 +361,6 @@ noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
 
 " session management
 nnoremap <leader>so :OpenSession<Space>
@@ -382,7 +389,7 @@ let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/
 
 " The Silver Searcher
 if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore /lib/ -g ""'
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
