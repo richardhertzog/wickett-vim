@@ -31,6 +31,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -49,6 +50,11 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
+" ES2015 code snippets (Optional)
+Plug 'epilande/vim-es2015-snippets'
+
+" React code snippets
+Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'junegunn/limelight.vim'
 Plug 'prettier/vim-prettier', {
@@ -415,6 +421,9 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
+" prettier
+let g:prettier#config#single_quote = 'true'
+
 let g:airline#extensions#ale#enabled = 1
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
