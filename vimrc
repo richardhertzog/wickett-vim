@@ -135,6 +135,7 @@ filetype plugin indent on
 "" Basic Setup
 "*****************************************************************************"
 "" Encoding
+hi link xmlEndTag xmlTag
 set scrolloff=30
 set encoding=utf-8
 set fileencoding=utf-8
